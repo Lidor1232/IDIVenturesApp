@@ -18,16 +18,16 @@ export const darkSystemColors = {
 };
 
 export const themeColors = {
-  title: '#3E536F',
-  subtitle: COLORS.white,
-  text: COLORS.white,
-  background: COLORS.blackBackground,
+  title: COLORS.black,
+  subtitle: COLORS.black,
+  text: COLORS.black,
+  background: COLORS.white,
 };
 
 export const appTheme = {
   dark: true,
   colors: {
-    primary: darkSystemColors.white,
+    primary: darkSystemColors.black,
     background: themeColors.background,
     card: themeColors.background,
     text: themeColors.text,
