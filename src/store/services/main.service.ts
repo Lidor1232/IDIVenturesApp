@@ -9,19 +9,15 @@ import {
 } from '../actions/main.actions';
 import {getCities, getCountries} from '../../services/api/api';
 
-export async function onGetCities({
-  namePrefix,
-  countryIds,
-}: {
-  namePrefix?: string;
-  countryIds?: string;
-}): Promise<void> {
+export async function onGetCities(): Promise<void> {
   try {
     store.dispatch(mainPageCitiesFetchRequest());
+    const queries = store.getState().main.requests.citiesRequest.queries;
     const citiesRes = await getCities({
       offset: 0,
-      namePrefix,
-      countryIds,
+      ...(queries.namePrefix ? {namePrefix: queries.namePrefix} : null),
+      ...(queries.countryIds ? {countryIds: queries.countryIds} : null),
+      ...(queries.sort ? {sort: queries.sort} : null),
     });
     store.dispatch(
       mainPageCitiesFetchSuccess({

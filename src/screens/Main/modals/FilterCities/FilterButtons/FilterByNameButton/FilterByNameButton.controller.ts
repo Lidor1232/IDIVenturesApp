@@ -3,7 +3,10 @@ import {
   IFilterOption,
 } from '../../../../../../store/reducers/main.reducer';
 import {store} from '../../../../../../store/store';
-import {mainPageFilterCitiesModalSetActiveFilterOption} from '../../../../../../store/actions/main.actions';
+import {
+  mainPageCitiesSetCountryIdsQuery,
+  mainPageFilterCitiesModalSetActiveFilterOption,
+} from '../../../../../../store/actions/main.actions';
 
 export function onGetIsActive({
   activeFilterOption,
@@ -14,6 +17,11 @@ export function onGetIsActive({
 }
 
 export function onPress(): void {
+  store.dispatch(
+    mainPageCitiesSetCountryIdsQuery({
+      countryIds: null,
+    }),
+  );
   store.dispatch(
     mainPageFilterCitiesModalSetActiveFilterOption({
       activeFilterOption: FILTER_BY_NAME,

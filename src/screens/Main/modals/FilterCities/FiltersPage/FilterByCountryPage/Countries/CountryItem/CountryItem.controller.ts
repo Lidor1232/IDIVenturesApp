@@ -1,6 +1,9 @@
 import {store} from '../../../../../../../../store/store';
 import {ICountry} from '../../../../../../../../utills/types';
-import {mainPageSetShowFilterCitiesModal} from '../../../../../../../../store/actions/main.actions';
+import {
+  mainPageCitiesSetCountryIdsQuery,
+  mainPageSetShowFilterCitiesModal,
+} from '../../../../../../../../store/actions/main.actions';
 import {onGetCities} from '../../../../../../../../store/services/main.service';
 
 export function onPress({item}: {item: ICountry}): void {
@@ -9,5 +12,10 @@ export function onPress({item}: {item: ICountry}): void {
       showModal: false,
     }),
   );
-  onGetCities({countryIds: item.wikiDataId});
+  store.dispatch(
+    mainPageCitiesSetCountryIdsQuery({
+      countryIds: item.wikiDataId,
+    }),
+  );
+  onGetCities();
 }

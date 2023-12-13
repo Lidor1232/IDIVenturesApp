@@ -1,5 +1,8 @@
 import {store} from '../../../../../../../store/store';
-import {mainPageSetShowFilterCitiesModal} from '../../../../../../../store/actions/main.actions';
+import {
+  mainPageCitiesSetNamePrefixQuery,
+  mainPageSetShowFilterCitiesModal,
+} from '../../../../../../../store/actions/main.actions';
 import {onGetCities} from '../../../../../../../store/services/main.service';
 
 export function onPress(): void {
@@ -10,7 +13,10 @@ export function onPress(): void {
   );
   const searchInput =
     store.getState().main.modals.filterCitiesModal.searchInput;
-  onGetCities({
-    namePrefix: searchInput,
-  });
+  store.dispatch(
+    mainPageCitiesSetNamePrefixQuery({
+      namePrefix: searchInput,
+    }),
+  );
+  onGetCities();
 }

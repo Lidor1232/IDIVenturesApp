@@ -38,6 +38,7 @@ export async function getCities({
       namePrefix,
       location,
       countryIds,
+      limit: 10,
     },
   });
   return res.data;
