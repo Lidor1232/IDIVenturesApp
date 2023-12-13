@@ -10,7 +10,7 @@ export const COLORS = {
   black: '#000',
   lightBlack: '#222',
   white: '#FFFFFF',
-  grey: '#787777',
+  grey: '#a8a7a7',
   lightGrey: '#D3D3D3',
   orange: '#7FDBFF',
   opacityPrimary: 'rgba(48, 163, 191, 0.1)',
