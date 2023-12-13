@@ -18,10 +18,12 @@ export async function getCities({
   offset,
   namePrefix,
   location,
+  countryIds,
 }: {
   offset: number;
   namePrefix?: string;
   location?: string;
+  countryIds?: string;
   sort?: string;
 }): Promise<IGetCitiesResponse> {
   const res = await idiappAxios({
@@ -35,6 +37,7 @@ export async function getCities({
       offset,
       namePrefix,
       location,
+      countryIds,
     },
   });
   return res.data;

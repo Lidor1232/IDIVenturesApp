@@ -1,11 +1,12 @@
 import {Pressable, StyleSheet, Text} from 'react-native';
 import React, {FC} from 'react';
+import {onPress} from './SearchButton.controller';
 
 interface IProps {}
 
 export const SearchButton: FC<IProps> = React.memo(({}) => {
   return (
-    <Pressable style={styles.container}>
+    <Pressable style={styles.container} onPress={onPress}>
       <Text style={styles.text}>Search</Text>
     </Pressable>
   );
