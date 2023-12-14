@@ -1,3 +1,5 @@
+import {ICoordinates} from '../types';
+
 export function onGetCoordinatePrefix({
   coordinate,
 }: {
@@ -40,4 +42,16 @@ export function onGetFormatCoordinatesToISO6709({
     latitude: formattedLat,
     longitude: formattedLng,
   };
+}
+
+export function onGetLocationAPIQueryByCoordinates({
+  coordinates,
+}: {
+  coordinates: ICoordinates;
+}): string {
+  const formattedCoordinates = onGetFormatCoordinatesToISO6709({
+    latitude: coordinates.latitude,
+    longitude: coordinates.longitude,
+  });
+  return `${formattedCoordinates.latitude}${formattedCoordinates.longitude}`;
 }

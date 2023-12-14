@@ -11,16 +11,7 @@ import {
   mainPageSearchCountriesSuccess,
 } from '../actions/main.actions';
 import {getCities, getCountries} from '../../services/api/api';
-import {onGetFormatCoordinatesToISO6709} from '../../utills/location/location';
-import {ICity} from '../../utills/types';
-
-export function onGetLocationQueryByCity({city}: {city: ICity}): string {
-  const formattedCoordinates = onGetFormatCoordinatesToISO6709({
-    latitude: city.latitude,
-    longitude: city.longitude,
-  });
-  return `${formattedCoordinates.latitude}${formattedCoordinates.longitude}`;
-}
+import {onGetLocationAPIQueryByCoordinates} from '../../utills/location/location';
 
 export async function onGetCities(): Promise<void> {
   try {
@@ -33,8 +24,11 @@ export async function onGetCities(): Promise<void> {
       ...(queries.sort ? {sort: queries.sort} : null),
       ...(queries.nearCity
         ? {
-            location: onGetLocationQueryByCity({
-              city: queries.nearCity,
+            location: onGetLocationAPIQueryByCoordinates({
+              coordinates: {
+                latitude: queries.nearCity.latitude,
+                longitude: queries.nearCity.longitude,
+              },
             }),
             radius: 100,
           }
