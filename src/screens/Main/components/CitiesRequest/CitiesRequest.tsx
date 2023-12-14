@@ -3,7 +3,7 @@ import {shallowEqual, useSelector} from 'react-redux';
 import {IRootState} from '../../../../store/reducers/combineReducer.reducer';
 import {Loader} from '../../../../components/Loader/Loader';
 import {Error} from '../../../../components/Error/Error';
-import {CitiesList} from '../CitiesList/CitiesList';
+import {CitiesList} from './CitiesList/CitiesList';
 
 interface IProps {}
 

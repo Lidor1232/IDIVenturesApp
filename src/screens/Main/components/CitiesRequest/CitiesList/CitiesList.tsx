@@ -1,7 +1,7 @@
 import {FlatList} from 'react-native';
 import React, {FC} from 'react';
 import {shallowEqual, useSelector} from 'react-redux';
-import {IRootState} from '../../../../store/reducers/combineReducer.reducer';
+import {IRootState} from '../../../../../store/reducers/combineReducer.reducer';
 import {onKeyExtractor, onRenderItem} from './CitiesList.controller';
 
 interface IProps {}

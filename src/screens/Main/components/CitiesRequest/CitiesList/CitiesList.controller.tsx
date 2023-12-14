@@ -1,5 +1,5 @@
 import React from 'react';
-import {ICity} from '../../../../utills/types';
+import {ICity} from '../../../../../utills/types';
 import {CityItem} from './CityItem/CityItem';
 
 export function onRenderItem({item}: {item: ICity}) {

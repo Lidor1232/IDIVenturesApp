@@ -72,7 +72,10 @@ export interface IWeather {
 
 // Imperial - Fahrenheit
 // Metric - Celsius
-export type IWeatherUnits = 'imperial' | 'metric';
+export const imperial = 'imperial';
+export const metric = 'metric';
+
+export type IWeatherUnits = typeof imperial | typeof metric;
 
 export interface ICoordinates {
   latitude: number;

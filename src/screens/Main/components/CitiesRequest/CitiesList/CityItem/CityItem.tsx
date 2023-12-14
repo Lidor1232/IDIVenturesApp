@@ -1,6 +1,6 @@
 import {Pressable, StyleSheet, Text, View} from 'react-native';
 import React, {FC, useCallback} from 'react';
-import {ICity} from '../../../../../utills/types';
+import {ICity} from '../../../../../../utills/types';
 import {useNavigation} from '@react-navigation/native';
 import {onPress} from './CityItem.controller';
 

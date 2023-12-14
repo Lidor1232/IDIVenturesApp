@@ -1,5 +1,5 @@
-import {onNavigateCityDetails} from '../../../../../navigation/navigation.controller';
-import {ICity} from '../../../../../utills/types';
+import {onNavigateCityDetails} from '../../../../../../navigation/navigation.controller';
+import {ICity} from '../../../../../../utills/types';
 
 export function onPress({
   navigation,
