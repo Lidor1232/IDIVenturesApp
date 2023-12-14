@@ -1,10 +1,18 @@
-import {StyleSheet} from 'react-native';
-import React, {FC} from 'react';
+import React, {FC, useEffect} from 'react';
+import {onMount} from './CityDetails.controller';
+import ScreenContainer from '../../components/ScreenContainer/ScreenContainer';
+import {CityDetailsRequest} from './components/CityDetailsRequest/CityDetailsRequest';
 
 interface IProps {}
 
 export const CityDetails: FC<IProps> = React.memo(({}) => {
-  return <></>;
-});
+  useEffect(() => {
+    onMount();
+  }, []);
 
-const styles = StyleSheet.create({});
+  return (
+    <ScreenContainer>
+      <CityDetailsRequest />
+    </ScreenContainer>
+  );
+});

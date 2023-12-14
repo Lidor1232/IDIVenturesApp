@@ -1,14 +1,25 @@
-import {StyleSheet, Text, View} from 'react-native';
-import React, {FC} from 'react';
+import {Pressable, StyleSheet, Text, View} from 'react-native';
+import React, {FC, useCallback} from 'react';
 import {ICity} from '../../../../../utills/types';
+import {useNavigation} from '@react-navigation/native';
+import {onPress} from './CityItem.controller';
 
 interface IProps {
   item: ICity;
 }
 
 export const CityItem: FC<IProps> = React.memo(({item}) => {
+  const navigation = useNavigation();
+
+  const _onPress = useCallback(() => {
+    onPress({
+      item,
+      navigation,
+    });
+  }, [navigation, item]);
+
   return (
-    <View style={styles.container}>
+    <Pressable style={styles.container} onPress={_onPress}>
       <View style={styles.contentContainer}>
         <Text style={styles.cityName}>City name: {item.name}</Text>
         <Text style={styles.countryName}>Country name: {item.country}</Text>
@@ -17,7 +28,7 @@ export const CityItem: FC<IProps> = React.memo(({item}) => {
           {item.longitude}
         </Text>
       </View>
-    </View>
+    </Pressable>
   );
 });
 
