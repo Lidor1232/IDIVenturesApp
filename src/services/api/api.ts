@@ -19,6 +19,7 @@ export async function getCities({
   namePrefix,
   location,
   countryIds,
+  sort,
 }: {
   offset: number;
   namePrefix?: string;
@@ -38,6 +39,7 @@ export async function getCities({
       namePrefix,
       location,
       countryIds,
+      sort,
       limit: 10,
     },
   });

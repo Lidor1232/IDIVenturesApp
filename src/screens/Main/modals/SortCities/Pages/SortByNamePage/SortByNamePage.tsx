@@ -12,7 +12,10 @@ interface IProps {}
 export const SortByNamePage: FC<IProps> = React.memo(({}) => {
   return (
     <View style={styles.container}>
-      <Button color={COLORS.grey} onPress={onPressSortByAscendingOrder}>
+      <Button
+        color={COLORS.grey}
+        onPress={onPressSortByAscendingOrder}
+        style={styles.ascendingOrderButton}>
         A - Z
       </Button>
       <Button color={COLORS.grey} onPress={onPressSortByDescendingOrder}>
@@ -27,5 +30,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  ascendingOrderButton: {
+    marginBottom: 12,
   },
 });

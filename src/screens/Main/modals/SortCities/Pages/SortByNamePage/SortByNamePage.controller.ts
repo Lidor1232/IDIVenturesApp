@@ -1,9 +1,17 @@
 import {onGetCities} from '../../../../../../store/services/main.service';
 import {store} from '../../../../../../store/store';
-import {mainPageCitiesSetSortQuery} from '../../../../../../store/actions/main.actions';
+import {
+  mainPageCitiesSetSortQuery,
+  mainPageSetShowSortCitiesModal,
+} from '../../../../../../store/actions/main.actions';
 
 export function onPress(): void {
   onGetCities();
+  store.dispatch(
+    mainPageSetShowSortCitiesModal({
+      showModal: false,
+    }),
+  );
 }
 
 export function onPressSortByAscendingOrder(): void {
