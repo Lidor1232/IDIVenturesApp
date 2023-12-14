@@ -1,25 +1,21 @@
-import {Pressable, StyleSheet, Text} from 'react-native';
+import {StyleSheet} from 'react-native';
 import React, {FC} from 'react';
 import {onPress} from './SearchButton.controller';
+import {Button} from '../../../../components/Button/Button';
+import {COLORS} from '../../../../assets/colors/colors';
 
 interface IProps {}
 
 export const SearchButton: FC<IProps> = React.memo(({}) => {
   return (
-    <Pressable style={styles.container} onPress={onPress}>
-      <Text style={styles.text}>Search</Text>
-    </Pressable>
+    <Button color={COLORS.grey} onPress={onPress} style={styles.container}>
+      Choose filter by
+    </Button>
   );
 });
 
 const styles = StyleSheet.create({
   container: {
-    width: '100%',
-    height: 50,
-    justifyContent: 'center',
-    paddingHorizontal: 10,
-    borderRadius: 5,
-    borderWidth: 1,
+    marginBottom: 12,
   },
-  text: {},
 });

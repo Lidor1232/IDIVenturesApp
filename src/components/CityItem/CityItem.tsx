@@ -24,10 +24,11 @@ export const CityItem: FC<IProps> = React.memo(({item, onPress}) => {
 
 const styles = StyleSheet.create({
   container: {
-    width: '50%',
     marginBottom: 40,
   },
-  contentContainer: {},
+  contentContainer: {
+    borderWidth: 1,
+  },
   cityName: {
     textAlign: 'center',
     marginBottom: 12,

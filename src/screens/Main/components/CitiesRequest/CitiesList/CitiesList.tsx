@@ -18,7 +18,6 @@ export const CitiesList: FC<IProps> = React.memo(({}) => {
       data={cities}
       renderItem={onRenderItem}
       keyExtractor={onKeyExtractor}
-      numColumns={2}
       ListEmptyComponent={NoResults}
     />
   );
