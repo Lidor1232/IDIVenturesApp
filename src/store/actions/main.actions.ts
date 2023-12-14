@@ -31,6 +31,14 @@ export const MAIN_PAGE_CITIES_SET_COUNTRY_IDS_QUERY =
   'MAIN_PAGE_CITIES_SET_COUNTRY_IDS_QUERY';
 export const MAIN_PAGE_CITIES_SET_SORT_QUERY =
   'MAIN_PAGE_CITIES_SET_SORT_QUERY';
+export const MAIN_PAGE_CITIES_FOR_SORT_BY_DISTANCE_FETCH_REQUEST =
+  'MAIN_PAGE_CITIES_FOR_SORT_BY_DISTANCE_FETCH_REQUEST';
+export const MAIN_PAGE_CITIES_FOR_SORT_BY_DISTANCE_FETCH_SUCCESS =
+  'MAIN_PAGE_CITIES_FOR_SORT_BY_DISTANCE_FETCH_SUCCESS';
+export const MAIN_PAGE_CITIES_FOR_SORT_BY_DISTANCE_FETCH_FAIL =
+  'MAIN_PAGE_CITIES_FOR_SORT_BY_DISTANCE_FETCH_FAIL';
+export const MAIN_PAGE_CITIES_SET_NEAR_CITY_QUERY =
+  'MAIN_PAGE_CITIES_SET_NEAR_CITY_QUERY';
 
 export function mainPageSearchCountriesRequest() {
   return {
@@ -141,6 +149,34 @@ export function mainPageCitiesSetCountryIdsQuery(data: {
 export function mainPageCitiesSetSortQuery(data: {sort: string | null}) {
   return {
     type: MAIN_PAGE_CITIES_SET_SORT_QUERY,
+    payload: data,
+  };
+}
+
+export function mainPageCitiesForSortByDistanceFetchRequest() {
+  return {
+    type: MAIN_PAGE_CITIES_FOR_SORT_BY_DISTANCE_FETCH_REQUEST,
+  };
+}
+
+export function mainPageCitiesForSortByDistanceFetchSuccess(data: {
+  cities: ICity[];
+}) {
+  return {
+    type: MAIN_PAGE_CITIES_FOR_SORT_BY_DISTANCE_FETCH_SUCCESS,
+    payload: data,
+  };
+}
+
+export function mainPageCitiesForSortByDistanceFetchFail() {
+  return {
+    type: MAIN_PAGE_CITIES_FOR_SORT_BY_DISTANCE_FETCH_FAIL,
+  };
+}
+
+export function mainPageCitiesSetNearCityQuery(data: {nearCity: ICity}) {
+  return {
+    type: MAIN_PAGE_CITIES_SET_NEAR_CITY_QUERY,
     payload: data,
   };
 }

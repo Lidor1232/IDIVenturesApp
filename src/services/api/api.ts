@@ -26,12 +26,14 @@ export async function getCities({
   location,
   countryIds,
   sort,
+  radius,
 }: {
   offset: number;
   namePrefix?: string;
   location?: string;
   countryIds?: string;
   sort?: string;
+  radius?: number;
 }): Promise<IGetCitiesResponse> {
   const res = await idiappAxios({
     method: 'GET',
@@ -46,6 +48,7 @@ export async function getCities({
       location,
       countryIds,
       sort,
+      radius,
       limit: 10,
     },
   });
@@ -78,39 +81,6 @@ export async function getCountries({
     },
     params: {
       namePrefix,
-    },
-  });
-  return res.data;
-}
-
-export interface IGetCitiesNearLocation {
-  links: {
-    rel: string;
-    href: string;
-  }[];
-  data: ICity[];
-  metadata: {
-    currentOffset: number;
-    totalCount: number;
-  };
-}
-
-export async function getCitiesNearLocation({
-  location,
-  radius,
-}: {
-  radius: number;
-  location: string;
-}): Promise<IGetCitiesNearLocation> {
-  const res = await idiappAxios({
-    method: 'GET',
-    url: `https://wft-geo-db.p.rapidapi.com/v1/geo/locations/${location}/nearbyCities`,
-    params: {
-      radius,
-    },
-    headers: {
-      'X-RapidAPI-Key': RAPID_API_KEY,
-      'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com',
     },
   });
   return res.data;
