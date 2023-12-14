@@ -3,6 +3,7 @@ import React, {FC} from 'react';
 import {shallowEqual, useSelector} from 'react-redux';
 import {IRootState} from '../../../../../../../../store/reducers/combineReducer.reducer';
 import {onKeyExtractor, onRenderItem} from './CitiesList.controller';
+import {NoResults} from './NoResults/NoResults';
 
 interface IProps {}
 
@@ -18,6 +19,7 @@ export const CitiesList: FC<IProps> = React.memo(({}) => {
       data={cities}
       renderItem={onRenderItem}
       keyExtractor={onKeyExtractor}
+      ListEmptyComponent={NoResults}
     />
   );
 });
