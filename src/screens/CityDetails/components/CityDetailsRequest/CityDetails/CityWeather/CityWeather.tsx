@@ -10,13 +10,18 @@ export const CityWeather: FC<IProps> = React.memo(({}) => {
     (state: IRootState) => state.cityDetails.requests.weatherRequest.weather,
     shallowEqual,
   );
+  const weatherUnits = useSelector(
+    (state: IRootState) => state.weather.units,
+    shallowEqual,
+  );
 
   return (
     <>
       {weather ? (
         <View>
           <Text style={styles.title}>Weather</Text>
-          <Text>Weather: {weather.main.temp}</Text>
+          <Text>Weather Units: {weatherUnits}</Text>
+          <Text>Weather Temp: {weather.main.temp}</Text>
         </View>
       ) : null}
     </>

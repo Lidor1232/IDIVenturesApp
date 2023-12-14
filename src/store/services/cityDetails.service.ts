@@ -35,9 +35,10 @@ export async function onGetCityWeather({
 }): Promise<void> {
   try {
     store.dispatch(cityDetailsWeatherFetchRequest());
+    const weatherUnits = store.getState().weather.units;
     const weather = await getLocationWeather({
       coordinates: cityCoordinates,
-      units: 'metric',
+      units: weatherUnits,
     });
     store.dispatch(
       cityDetailsWeatherFetchSuccess({
