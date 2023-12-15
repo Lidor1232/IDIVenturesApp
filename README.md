@@ -5,8 +5,8 @@
 
 The app utilizes free API services with the following usage limits:
 
+- **GeoDB Cities:** Limited to 1000 calls per day, with a maximum of 1 call per **second**.
 - **OpenWeather:** Allows a maximum of 60 calls per minute and 1000 calls per day.
-- **GeoDB Cities:** Limited to 1000 calls per day, with a maximum of 1 call per second.
 
 ## To Clone
 
