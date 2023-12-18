@@ -1,9 +1,10 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import React, {FC} from 'react';
 import {shallowEqual, useSelector} from 'react-redux';
 import {IRootState} from '../../../../store/reducers/combineReducer.reducer';
 import {ImperialWeatherUnitButton} from './ImperialWeatherUnitButton/ImperialWeatherUnitButton';
 import {MetricWeatherUnitButton} from './MetricWeatherUnitButton/MetricWeatherUnitButton';
+import {Text} from '../../../../components/Text/Text';
 
 interface IProps {}
 

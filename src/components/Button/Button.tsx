@@ -2,12 +2,12 @@ import {
   ActivityIndicator,
   Pressable,
   StyleSheet,
-  Text,
   TextStyle,
   View,
   ViewStyle,
 } from 'react-native';
 import React, {FC, ReactNode} from 'react';
+import {Text} from '../Text/Text';
 
 interface IProps {
   color: string;
@@ -38,7 +38,13 @@ export const Button: FC<IProps> = ({
       onPress={onPress}>
       {icon ? <View style={styles.iconContainer}>{icon}</View> : null}
       {!isLoading ? (
-        <Text style={[styles.label, labelStyle]}>{children}</Text>
+        <Text
+          style={{
+            ...styles.label,
+            ...labelStyle,
+          }}>
+          {children}
+        </Text>
       ) : (
         <ActivityIndicator color={'white'} size={'small'} />
       )}

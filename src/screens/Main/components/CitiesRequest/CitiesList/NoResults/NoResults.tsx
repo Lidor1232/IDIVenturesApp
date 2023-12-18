@@ -1,5 +1,6 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import React, {FC} from 'react';
+import {Text} from '../../../../../../components/Text/Text';
 
 interface IProps {}
 

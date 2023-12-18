@@ -19,6 +19,7 @@ export const SearchInput: FC<IProps> = React.memo(({}) => {
       style={styles.input}
       value={searchInput}
       onChangeText={onChangeText}
+      placeholder={'Search...'}
     />
   );
 });
@@ -29,5 +30,6 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.grey,
     paddingVertical: 12,
     paddingHorizontal: 10,
+    color: COLORS.black,
   },
 });

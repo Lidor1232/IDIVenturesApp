@@ -3,6 +3,7 @@ import React, {FC} from 'react';
 import {shallowEqual, useSelector} from 'react-redux';
 import {IRootState} from '../../../../../store/reducers/combineReducer.reducer';
 import {onChangeText} from './SearchInput.controller';
+import {COLORS} from '../../../../../assets/colors/colors';
 
 interface IProps {}
 
@@ -29,5 +30,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     paddingHorizontal: 10,
     borderRadius: 5,
+    color: COLORS.black,
   },
 });
