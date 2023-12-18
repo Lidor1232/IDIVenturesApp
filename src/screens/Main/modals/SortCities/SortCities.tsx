@@ -5,6 +5,7 @@ import {ScreenModal} from '../../../../components/ScreenModal/ScreenModal';
 import {onCloseModal} from './SortCities.controller';
 import {Pages} from './Pages/Pages';
 import {PagesButtons} from './PagesButtons/PagesButtons';
+import {CloseButton} from './CloseButton/CloseButton';
 
 interface IProps {}
 
@@ -21,6 +22,7 @@ export const SortCities: FC<IProps> = React.memo(({}) => {
           visible={true}
           onCloseModal={onCloseModal}
           animationType={'none'}>
+          <CloseButton />
           <PagesButtons />
           <Pages />
         </ScreenModal>
