@@ -1,6 +1,7 @@
-import {Pressable, StyleSheet, Text} from 'react-native';
+import {Pressable, StyleSheet} from 'react-native';
 import React, {FC} from 'react';
 import {onPress} from './CloseButton.controller';
+import {Text} from '../../../../../components/Text/Text';
 
 interface IProps {}
 

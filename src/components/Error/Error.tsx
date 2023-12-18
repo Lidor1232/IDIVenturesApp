@@ -1,5 +1,6 @@
-import {StyleSheet, Text, View, ViewStyle} from 'react-native';
+import {StyleSheet, View, ViewStyle} from 'react-native';
 import React, {FC} from 'react';
+import {Text} from '../Text/Text';
 
 interface IProps {
   errorMessage?: string;

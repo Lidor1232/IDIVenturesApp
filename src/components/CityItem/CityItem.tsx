@@ -1,8 +1,9 @@
-import {Pressable, StyleSheet, Text, View} from 'react-native';
+import {Pressable, StyleSheet, View} from 'react-native';
 import React, {FC} from 'react';
 import {ICity} from '../../utills/types';
 import {Image} from '../Image/Image';
 import {COLORS} from '../../assets/colors/colors';
+import {Text} from '../Text/Text';
 
 interface IProps {
   item: ICity;
