@@ -19,6 +19,7 @@ export const SearchInput: FC<IProps> = React.memo(({}) => {
       style={styles.input}
       value={searchInput}
       onChangeText={onChangeText}
+      placeholder={'Search...'}
     />
   );
 });
